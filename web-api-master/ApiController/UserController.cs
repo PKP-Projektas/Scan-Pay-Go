@@ -25,6 +25,10 @@ namespace ScanAndGoApi.Controllers
             {
                 using var context = new DatabaseContextFactory().CreateDbContext(null);
                 ShoppingList shoppingList = new ShoppingList();
+                shoppingList.User = user;
+                user.ShoppingList = shoppingList;
+                context.Users.Attach(shoppingList.User);
+                context.ShoppingLists.Add(shoppingList);
                 context.Users.Add(user);
                 context.SaveChanges();
                 return new OkObjectResult(user);
