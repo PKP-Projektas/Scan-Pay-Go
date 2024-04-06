@@ -52,6 +52,33 @@ namespace ScanAndGoApi.Migrations
 
                     b.ToTable("USER");
                 });
+
+                modelBuilder.Entity("ScanAndGoApi.Models.Product", b =>
+                {
+                    b.Property<long>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("id"));
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Image")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.HasKey("id");
+
+                    b.ToTable("PRODUCT");
+                });
 #pragma warning restore 612, 618
         }
     }
