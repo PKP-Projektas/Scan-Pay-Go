@@ -80,40 +80,7 @@ namespace ScanAndGoApi.Migrations
 
                     b.ToTable("PRODUCT");
                 });
-
-                modelBuilder.Entity("ScanAndGoApi.Models.ShoppingList", b =>
-                {
-                    b.Property<long>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SHOPPING_LIST");
-                });
-
-            modelBuilder.Entity("ScanAndGoApi.Models.ShoppingList", b =>
-                {
-                    b.HasOne("ScanAndGoApi.Models.User", "User")
-                        .WithOne("ShoppingList")
-                        .HasForeignKey("ScanAndGoApi.Models.ShoppingList", "Id")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
-                });
-
-            modelBuilder.Entity("ScanAndGoApi.Models.ShoppingList", b =>
-                {
-                    b.Navigation("ProductsInList");
-                });
 #pragma warning restore 612, 618
         }
     }
 }
-=======
-#pragma warning restore 612, 618
-        }
-    }
-}
-
