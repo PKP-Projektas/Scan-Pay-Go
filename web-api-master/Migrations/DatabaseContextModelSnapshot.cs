@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using ScanAndGoApi.Context;
 
+
 #nullable disable
 
 namespace ScanAndGoApi.Migrations

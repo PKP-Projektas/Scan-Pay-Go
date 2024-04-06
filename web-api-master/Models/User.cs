@@ -4,6 +4,7 @@ using System.Net.Mail;
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
+
 namespace ScanAndGoApi.Models
 {
     [Table("USER")]
