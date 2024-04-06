@@ -54,11 +54,6 @@ namespace ScanAndGoApi.Migrations
                     b.ToTable("USER");
                 });
 
-             modelBuilder.Entity("ScanAndGoApi.Models.User", b =>
-                {
-                    b.Navigation("ShoppingList");
-                });
-
                 modelBuilder.Entity("ScanAndGoApi.Models.Product", b =>
                 {
                     b.Property<long>("id")
@@ -86,7 +81,7 @@ namespace ScanAndGoApi.Migrations
                     b.ToTable("PRODUCT");
                 });
 
-                            modelBuilder.Entity("ScanAndGoApi.Models.ShoppingList", b =>
+                modelBuilder.Entity("ScanAndGoApi.Models.ShoppingList", b =>
                 {
                     b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
@@ -116,3 +111,9 @@ namespace ScanAndGoApi.Migrations
         }
     }
 }
+=======
+#pragma warning restore 612, 618
+        }
+    }
+}
+
