@@ -70,6 +70,23 @@ namespace ScanAndGoApi.ApiController
             {
                 return new BadRequestObjectResult(e.Message);
             }
-        }        
+        }
+
+        [HttpGet("GetAllByShelfId/{id}")]
+        public IActionResult GetAllByShelfId([FromRoute] long id)
+        {
+            try
+            {
+                using var context = new DatabaseContextFactory().CreateDbContext(null);
+                var products = context.Products.Where(p => p.Items.Any(i => i.Shelf.Id == id)).ToList();
+                return new OkObjectResult(products);
+            }
+            catch (Exception e)
+            {
+                return new BadRequestObjectResult(e.Message);
+            }
+        }
+
+        
     }
 }
