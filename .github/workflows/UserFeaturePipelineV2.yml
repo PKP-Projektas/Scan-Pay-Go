@@ -1,0 +1,43 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: .NET T E S T  P I P E L I N E user features
+
+on:
+  push:
+    branches: [ "User-Features" ]
+  pull_request:
+    branches: [ "User-Features" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up JDK
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11' # Adjust according to your project's requirements
+
+    - name: Set up Android SDK
+      uses: reactivecircus/android-emulator-runner@v2
+      with:
+        api-level: 30
+        # Additional configuration if required
+
+    - name: Build Android app
+      run: |
+        # Commands to build your Android app (e.g., using Gradle)
+        cd PKP-Projektas/Scan-Pay-Go/User-Features
+        ./gradlew assembleDebug
+
+    - name: Run tests
+      run: |
+        # Commands to run tests for the Android project
+        # Adjust according to your project's testing frameworks
+        cd PKP-Projektas/Scan-Pay-Go/User-Features
+        ./gradlew test
