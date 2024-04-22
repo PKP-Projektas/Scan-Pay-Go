@@ -32,7 +32,7 @@ jobs:
 
       - name: Install dependencies\
         run: |
-          cd Scan-Pay-Go/frontend-main/
+          cd frontend-main
           npm ci
 
       - name: Build
