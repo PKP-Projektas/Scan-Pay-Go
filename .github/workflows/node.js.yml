@@ -38,3 +38,7 @@ jobs:
 
       - name: Run tests
         run: npm test
+
+      - name: Publish test report
+        if: success() || failure()
+        uses: scacap/action-surefire-report-report@v1
