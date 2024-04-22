@@ -41,4 +41,4 @@ jobs:
 
       - name: Publish test report
         if: success() || failure()
-        uses: scacap/action-surefire-report-report@v1
+        uses: scacap/action-surefire-report@v1
